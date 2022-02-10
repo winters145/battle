@@ -1,5 +1,11 @@
 <h2><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h2>
 <br>
+<% if @game.turn == 1 %>
+<h1><%= @game.player_1.name %>'s turn</h1>
+<% else %>
+<h1><%= @game.player_2.name %>'s turn</h1>
+<% end %>
+<br>
 <%= @game.player_1.name %>: <%= @game.player_1.hit_points %>HP
 <br>
 <%= @game.player_2.name %>: <%= @game.player_2.hit_points %>HP

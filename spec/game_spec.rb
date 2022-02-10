@@ -28,4 +28,12 @@ let(:chloe) { double :player }
     end
   end
 
+  describe '#turn' do
+    it "changes the players turn" do
+      allow(dash).to receive(:receives_attack)
+      game.attack(dash)
+      expect(game.turn).to eq 2
+    end
+  end
+
 end
