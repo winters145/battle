@@ -2,7 +2,7 @@ require 'game'
 
 describe Game do
 
-subject(:game) { described_class.new }
+subject(:game) { described_class.new(dash, chloe) }
 let(:dash) { double :player }
 let(:chloe) { double :player }
 
@@ -18,6 +18,13 @@ let(:chloe) { double :player }
     it 'attacks the player' do
       expect(chloe).to receive(:receives_attack)
       game.attack(chloe)
+    end
+  end
+
+  describe "#initialize" do
+    it 'saves an instance of two players' do
+      expect(game.player_1).to eq dash
+      expect(game.player_2).to eq chloe
     end
   end
 
