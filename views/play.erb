@@ -7,12 +7,12 @@
     }
     
     h1 {
-      color: white;
+      color: rgb(192, 47, 47);
       text-align: center;
     }
     
     h2 {
-      color: rgb(167, 156, 14);
+      color: rgb(219, 208, 57);
       text-align: center;
     }
 
@@ -29,6 +29,17 @@
       color:coral;
       position:absolute; left:1200px; top:600px;
     }
+
+    .btn {
+      border: none;
+      color: rgb(255, 255, 255);
+      padding: 10px 10px;
+      font-size: 16px;
+      text-align: center;
+      cursor: pointer;
+    }
+    .attack {background-color: #000000;} /* Red */ 
+    .attack:hover {background: #46403f;}
     </style>
   </head>
 
@@ -46,7 +57,7 @@
       <%= @game.player_1.name %>: <%= @game.player_1.hit_points %>HP
       <% if @game.turn == 1 %>
         <form action='/attack'>
-          <input type='submit' value='Attack'>
+          <button class="btn attack">Attack</button>
         </form>
       <% end %>
     </p1>
@@ -55,7 +66,7 @@
       <%= @game.player_2.name %>: <%= @game.player_2.hit_points %>HP
       <% if @game.turn != 1 %>
         <form action='/attack'>
-          <input type='submit' value='Attack'>
+          <button class="btn attack">Attack</button>
         </form>
       <% end %>
     </p2>

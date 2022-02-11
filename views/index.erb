@@ -1,5 +1,70 @@
-<form action="/names" method="post">
-  <input type="text" name="player_1_name">
-  <input type="text" name="player_2_name">
-  <input type="submit" value="Submit">
-</form>
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <style>
+    body {
+      background-color: rgb(74, 72, 214);
+    }
+
+      input[type=text] {
+      background-color: rgb(143, 167, 161);
+      outline: black;
+      height: 25px;
+      width: 150px;
+    }
+
+    h1 {
+      color: rgb(114, 2, 2);
+      text-align: center;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      font-size: xxx-large;
+    }
+
+    h2 {
+      color: rgb(3, 3, 2);
+      text-align: center;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      font-size: xx-large;
+    }
+
+    p {
+      text-align: center;
+    }
+
+    .btn {
+      border: none;
+      color: rgb(255, 255, 255);
+      padding: 14px 28px;
+      font-size: 16px;
+      text-align: center;
+      cursor: pointer;
+    }
+    .submit {background-color: #990d03;} /* Red */ 
+    .submit:hover {background: #e22b1e;}
+    
+    </style>
+  </head>
+
+
+<h1> Get ready for BATTLE! </h1>
+
+
+  <form action="/names" method="post">
+    <h2>
+      Enter Player 1:
+      <br>
+        <input type="text" name="player_1_name">
+      <br>
+      <br>
+      Enter Player 2: 
+      <br>
+        <input type="text" name="player_2_name">
+    <br>
+    </h2>
+    <p>
+      <button class="btn submit">Submit</button>
+    </p>
+  </form>
+
+</html>
