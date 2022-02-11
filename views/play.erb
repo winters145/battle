@@ -1,15 +1,64 @@
-<h1><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h1>
-<br>
-<% if @game.turn == 1 %>
-<h2><%= @game.player_1.name %>'s turn</h2>
-<% else %>
-<h2><%= @game.player_2.name %>'s turn</h2>
-<% end %>
-<br>
-<%= @game.player_1.name %>: <%= @game.player_1.hit_points %>HP
-<br>
-<%= @game.player_2.name %>: <%= @game.player_2.hit_points %>HP
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+    body {
+      background-color: rgb(1, 68, 37);
+    }
+    
+    h1 {
+      color: white;
+      text-align: center;
+    }
+    
+    h2 {
+      color: rgb(167, 156, 14);
+      text-align: center;
+    }
 
-<form action='/attack'>
-  <input type='submit' value='Attack'>
-</form>
+    p1 {
+      font-family: verdana;
+      font-size: 20px;
+      color:coral;
+      position:absolute; left:100px;
+    }
+
+    p2 {
+      font-family: verdana;
+      font-size: 20px;
+      color:coral;
+      position:absolute; left:1200px; top:600px;
+    }
+    </style>
+  </head>
+
+  <%# <link rel="stylesheet" src="../style-sheets/style-sheet.css"> %>
+
+  <body>
+    <h1><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h1>
+    <% if @game.turn == 1 %>
+    <h2><%= @game.player_1.name %>'s turn</h2>
+    <% else %>
+    <h2><%= @game.player_2.name %>'s turn</h2>
+    <% end %>
+    
+    <p1>
+      <%= @game.player_1.name %>: <%= @game.player_1.hit_points %>HP
+      <% if @game.turn == 1 %>
+        <form action='/attack'>
+          <input type='submit' value='Attack'>
+        </form>
+      <% end %>
+    </p1>
+    <br>
+    <p2>
+      <%= @game.player_2.name %>: <%= @game.player_2.hit_points %>HP
+      <% if @game.turn != 1 %>
+        <form action='/attack'>
+          <input type='submit' value='Attack'>
+        </form>
+      <% end %>
+    </p2>
+
+  </body>  
+</html>
