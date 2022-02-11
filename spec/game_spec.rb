@@ -29,10 +29,14 @@ let(:chloe) { double :player }
   end
 
   describe '#turn' do
-    it "changes the players turn" do
+    it "changes the players turn after an attack" do
       allow(dash).to receive(:receives_attack)
+      allow(chloe).to receive(:receives_attack)
+      expect(game.turn).to eq 1
       game.attack(dash)
       expect(game.turn).to eq 2
+      game.attack(chloe)
+      expect(game.turn).to eq 1
     end
   end
 

@@ -1,7 +1,7 @@
-<% if @game.turn == 1 %>
-<%= @game.player_1.name %> attacked <%= @game.player_2.name %>
+<% if $game.turn == 1 %>
+<%= $game.player_2.name %> attacked <%= $game.player_1.name %>
 <% else %>
-<%= @game.player_2.name %> attacked <%= @game.player_1.name %>
+<%= $game.player_1.name %> attacked <%= $game.player_2.name %>
 <% end %>
 
 <form action='/play'>

@@ -28,8 +28,9 @@ class Battle < Sinatra::Base
   end
 
   get '/attack' do
-    @game = $game
-    @game.attack(@game.player_2)
+    @turn = $game.turn
+    $game.attack($game.player_2) if @turn == 1
+    $game.attack($game.player_1) if @turn == 0
     erb :attack
   end
 
